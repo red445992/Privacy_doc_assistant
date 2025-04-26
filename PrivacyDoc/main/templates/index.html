@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Upload Privacy Document</title>
+    <title>Upload PDF</title>
 </head>
 <body>
-    <h1>Upload Privacy Policy PDF</h1>
-    <form method="post" enctype="multipart/form-data">
+    <h1>Upload a Document</h1>
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Upload</button>
     </form>
 
     <hr>
-    <h2>Uploaded Documents:</h2>
-    <ul>
-        {% for doc in documents %}
-            <li>{{ doc.title }} ({{ doc.uploaded_at }})</li>
-        {% empty %}
-            <li>No documents yet.</li>
-        {% endfor %}
-    </ul>
+
+    <h2>Uploaded Documents</h2>
+
+
+    {% if extracted_text %}
+    <h3>Extracted Text:</h3>
+    <textarea rows="15" cols="100" readonly>{{ extracted_text }}</textarea>
+{% endif %}
+
 </body>
 </html>
