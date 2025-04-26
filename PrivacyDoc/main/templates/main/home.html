@@ -1,0 +1,18 @@
+<!-- home.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Privacy Policy Assistant - Compare Policies</h1>
+  
+  <form method="post">
+    {% csrf_token %}
+    
+    <h2>Policy 1</h2>
+    <textarea name="policy_text_1" rows="10" cols="50" placeholder="Paste first privacy policy here..."></textarea>
+    
+    <h2>Policy 2</h2>
+    <textarea name="policy_text_2" rows="10" cols="50" placeholder="Paste second privacy policy here..."></textarea>
+    
+    <button type="submit">Compare</button>
+  </form>
+{% endblock %}

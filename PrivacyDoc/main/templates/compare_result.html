@@ -1,0 +1,38 @@
+<!-- compare_result.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Comparison of Privacy Policies</h1>
+
+  <h2>Policy 1 Summary:</h2>
+  <ul>
+    {% for sentence in summary_1 %}
+      <li>{{ sentence }}</li>
+    {% endfor %}
+  </ul>
+  
+  <h2>Policy 2 Summary:</h2>
+  <ul>
+    {% for sentence in summary_2 %}
+      <li>{{ sentence }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Risk Score Comparison:</h2>
+  <p>Policy 1 Risk Score: {{ risk_score_1 }}</p>
+  <p>Policy 2 Risk Score: {{ risk_score_2 }}</p>
+
+  <h3>Identified Risks in Policy 1:</h3>
+  <ul>
+    {% for risk in found_risks_1 %}
+      <li>{{ risk }}</li>
+    {% endfor %}
+  </ul>
+
+  <h3>Identified Risks in Policy 2:</h3>
+  <ul>
+    {% for risk in found_risks_2 %}
+      <li>{{ risk }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

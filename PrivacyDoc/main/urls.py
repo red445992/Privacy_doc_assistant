@@ -1,6 +1,7 @@
-from django.urls import path 
+from django.urls import path
 from . import views
+
 urlpatterns = [
-    path("",views.index,name="index"),
-    #  path('delete/<int:document_id>/', views.delete_document, name='delete_document'),
+    path('', views.home, name='home'),
+    path('compare/', views.analyze_policy, name='analyze_policy'),  # Optional: separate compare view
 ]

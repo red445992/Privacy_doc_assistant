@@ -1,0 +1,23 @@
+<!-- result.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Summary of Privacy Policy</h1>
+  <ul>
+    {% for sentence in summary %}
+      <li>{{ sentence }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Risk Score: {{ risk_score }}</h2>
+  {% if risk_score > 0 %}
+    <h3>Identified Risks:</h3>
+    <ul>
+      {% for risk in found_risks %}
+        <li>{{ risk }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No significant risks found.</p>
+  {% endif %}
+{% endblock %}
