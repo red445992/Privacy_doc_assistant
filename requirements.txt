@@ -1,0 +1,12 @@
+asgiref==3.8.1
+click==8.1.8
+colorama==0.4.6
+Django==5.2
+joblib==1.4.2
+nltk==3.9.1
+PyMuPDF==1.25.5
+python-decouple==3.8
+regex==2024.11.6
+sqlparse==0.5.3
+tqdm==4.67.1
+tzdata==2025.2

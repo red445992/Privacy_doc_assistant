@@ -1,0 +1,3 @@
+### Privacy Doc Assistant
+
+Privacy Doc Assistant is a Django-based web application that allows users to securely upload PDF documents, extract and clean meaningful text by removing stop words, punctuation, URLs, and HTML tags, and preview the original document in a separate tab. It supports PDF deletion, ensures a user-friendly interface, and prepares the data for further analysis or summarization—making it a helpful tool for document review and privacy-focused text handling.
