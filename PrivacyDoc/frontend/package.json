@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@types/react": "^19.1.5",
+    "@types/react-dom": "^19.1.5"
+  },
+  "dependencies": {
+    "framer-motion": "^12.12.2"
+  }
+}

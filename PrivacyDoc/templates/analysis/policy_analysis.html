@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}Policy Analysis - Privacy Doc Assistant{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <h1 class="mb-4">Policy Analysis</h1>
+        
+        <form method="post" class="mb-4">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="policy_text" class="form-label">Privacy Policy Text</label>
+                <textarea name="policy_text" id="policy_text" class="form-control policy-text" rows="10" required>{{ policy_text }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Analyze Policy</button>
+        </form>
+
+        {% if error %}
+            <div class="alert alert-danger">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        {% if summary %}
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Analysis Results</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h6>Risk Score</h6>
+                        <div class="risk-score {% if risk_score > 7 %}risk-high{% elif risk_score > 3 %}risk-medium{% else %}risk-low{% endif %}">
+                            {{ risk_score }}/10
+                        </div>
+                    </div>
+
+                    {% if found_risks %}
+                        <div class="mb-4">
+                            <h6>Identified Risks</h6>
+                            <ul class="list-group">
+                                {% for risk in found_risks %}
+                                    <li class="list-group-item">{{ risk }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+
+                    <div>
+                        <h6>Summary</h6>
+                        <ul class="list-group">
+                            {% for sentence in summary %}
+                                <li class="list-group-item">{{ sentence }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Add any additional JavaScript specific to this page
+</script>
+{% endblock %} 

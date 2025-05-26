@@ -1,0 +1,64 @@
+/* General Styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Document List Styles */
+.document-card {
+    transition: transform 0.2s;
+}
+
+.document-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Analysis Styles */
+.policy-text {
+    min-height: 200px;
+    font-family: monospace;
+}
+
+.risk-score {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.risk-high {
+    color: #dc3545;
+}
+
+.risk-medium {
+    color: #ffc107;
+}
+
+.risk-low {
+    color: #28a745;
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Profile Styles */
+.profile-header {
+    background-color: #f8f9fa;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+} 
